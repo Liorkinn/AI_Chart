@@ -5,17 +5,17 @@ import seaborn as sns
 
 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/cpu-performance/machine.data"
 names = [
-    "Vendor",
-    "Model",
-    "MYCT",
-    "MMIN",
-    "MMAX",
-    "CACH",
-    "CHMIN",
-    "CHMAX",
-    "PRP",
-    "ERP",
-]
+    "Vendor", #производитель
+    "Model",  #модель
+    "MYCT",   #время машинного цикла 
+    "MMIN",   #мин. объем ОП
+    "MMAX",   #макс объекм ОП
+    "CACH",   #Кэш памяти
+    "CHMIN",  #Мин кол-во каналов
+    "CHMAX",  #макс кол-во каналов
+    "PRP",    #опубл. относит. производительность
+    "ERP",    #относительная производительность
+] 
 
 dataset = pd.read_csv(url, names=names)
 array = dataset.values
