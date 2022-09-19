@@ -16,6 +16,7 @@ names = [
     "PRP",
     "ERP",
 ]
+
 dataset = pd.read_csv(url, names=names)
 array = dataset.values
 
@@ -38,7 +39,7 @@ print(dataset.shape)
 
 sns.set(style="whitegrid", context="notebook")
 sns.pairplot(dataset[names], height=1, hue = "Vendor")
-dataset.hist()
+dataset[names[0:9]].hist()
 plt.show()
 
 names = ["MYCT", "MMIN", "MMAX", "CACH", "CHMIN", "CHMAX"]
