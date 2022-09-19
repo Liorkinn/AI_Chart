@@ -18,6 +18,22 @@ names = [
 ]
 dataset = pd.read_csv(url, names=names)
 array = dataset.values
+
+X = array[:,0:9]
+Y = array[:,9]
+from sklearn.model_selection import train_test_split 
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.30)
+j = 0
+
+for i in names:
+    print('%-15s' % (i), sep=':', end = '')
+print("\n")
+for j in range(30):
+    for k in range(9):
+        print('%-15s' % (str(X_test[j,k])), sep=':', end = '')
+    print(Y_test[j], end = "\n")
+
+
 print(dataset.shape)
 
 sns.set(style="whitegrid", context="notebook")
