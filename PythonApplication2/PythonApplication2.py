@@ -35,7 +35,7 @@ for j in range(30):
     print(Y_test[j], end = "\n")
 
 
-print(dataset.shape)
+print("Обработка данных массива: " , dataset.shape)
 
 sns.set(style="whitegrid", context="notebook")
 sns.pairplot(dataset[names], height=1, hue = "Vendor")
